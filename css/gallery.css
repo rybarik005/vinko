@@ -1,0 +1,34 @@
+.carousel-item {
+  height: min(100vh, 80vw);
+  max-height: 100vh;
+  background: #777;
+}
+
+#myCarousel {
+  height: min(100vh, 80vw);
+}
+
+#gallerySection{
+  height: min(100vh, 80vw);
+}
+.square {
+  max-height: 100vh;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+}
+
+.imgItemContainer {
+  /*src bude pridaná v javascripte*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  background-color: grey;
+}
+
+.src {
+  /* background-color: #abcaba; */
+  width: 100/3%;
+  padding: 1%;
+  display: flex;
+}
