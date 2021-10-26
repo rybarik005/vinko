@@ -1,2 +1,1 @@
-# vinko
-pisem daco
+# vinkonepis nic 
