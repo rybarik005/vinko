@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,16 +16,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/gallery.css" rel="stylesheet">
+    <link href="../css/wine.css" rel="stylesheet"  >
     <style>
         .normal {
             height: 100vh;
             max-height: 100vh;
 
         }
+        #wine {
+                height: 100vh;
+                max-height: 100vh;
+                background-color: pink;
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+
+        .MultiCarousel-inner {
+            margin-left: 1000px;
+        }
     </style>
 </head>
 
-<body>
+<body >
 
     <!-- Navigation-->
     <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
@@ -82,114 +94,27 @@
 
     <!--Wine-->
     <section id="wine" class="normal" style="background-color: #808C68;">
-        <div class="container-lg">
-            <button class="btn bg-primary">MOVE LEFT</button>
+        <span class="text-secondary fw-bold">
+            Víno Vašš
+        </span>
+        <div class="row" id="carouselContainer">
+            <div class="MultiCarousel"id="MultiCarousel" >
+                <div class="controller">
+                    <a class="control prev" id="prev" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="control next" id="next" href="#recipeCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="MultiCarousel-inner" style="width: 5000px">
+    
+                </div>
+    
+            </div>
+    
+    
         </div>
-
-        <div class="row bg-secondary" style="width: 100%; overflow: hidden">
-
-            <div class="card col" style="width: 36rem;">
-                <div class="card-body p-0" style="transition: box-shadow 1000ms ease-in-out;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-7 p-4">
-                                <h4 class="card-title">Názov vína</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-                                    qui?
-                                </p>
-
-                                <div class="row">
-                                    <h5 class="col-6">Cena:</h5>
-                                    <p class="col-6">25€</p>
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="justify-content-center">
-                                        <a href="#contact" class="btn btn-primary">Kúpiť</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <img src="../assets/wines/image0.jpg" alt="" class="col-5 p-0">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card col" style="width: 36rem;">
-                <div class="card-body p-0" style="transition: box-shadow 1000ms ease-in-out;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-7 p-4">
-                                <h4 class="card-title">Názov vína</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-                                    qui?
-                                </p>
-
-                                <div class="row">
-                                    <h5 class="col-6">Cena:</h5>
-                                    <p class="col-6">25€</p>
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="justify-content-center">
-                                        <a href="#contact" class="btn btn-primary">Kúpiť</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <img src="../assets/wines/image0.jpg" alt="" class="col-5 p-0">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card col" style="width: 36rem;">
-                <div class="card-body p-0" style="transition: box-shadow 1000ms ease-in-out;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-7 p-4">
-                                <h4 class="card-title">Názov vína</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-                                    qui?
-                                </p>
-
-                                <div class="row">
-                                    <h5 class="col-6">Cena:</h5>
-                                    <p class="col-6">25€</p>
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="justify-content-center">
-                                        <a href="#contact" class="btn btn-primary">Kúpiť</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <img src="../assets/wines/image0.jpg" alt="" class="col-5 p-0">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
 
     </section>
     <!--Photo Gallery-->
@@ -300,11 +225,16 @@
 
     </section>
 
+
+    
+    <!-- <script src="../javascript/gallery.js"></script> -->
+    <script src="../javascript/json.js"></script>
+    <script src="../javascript/wine.js"></script>
+    <script src="../javascript/test.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
-    <!-- <script src="../javascript/gallery.js"></script> -->
 </body>
+
 
 </html>
