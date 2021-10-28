@@ -3,31 +3,37 @@ var data = `[
         "wineTitle": "Samorodné sladké",
         "price": "25",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
-        "imgTitle": "image0.jpg"
+        "imgTitle": "samorode_sladke.jpeg"
     },
     {
-        "wineTitle": "Vihorlat",
+        "wineTitle": "Vermut biely",
         "price": "30",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
-        "imgTitle": "image1.jpg"
+        "imgTitle": "vermut_biely.jpeg"
     },
     {
-        "wineTitle": "Samorodné kyslé",
+        "wineTitle": "Furmint suchý",
         "price": "28",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
         "imgTitle": "image2.jpg"
     },
     {
-        "wineTitle": "Samorodné horké",
+        "wineTitle": "Lipovina suchá 2019",
         "price": "40",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
-        "imgTitle": "image3.jpg"
+        "imgTitle": "lipovina_sucha.jpeg"
     },
     {
-        "wineTitle": "nerodné ružové",
+        "wineTitle": "Cuvé polosuché 2019",
         "price": "45",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
-        "imgTitle": "image4.jpg"
+        "imgTitle": "cuve_polosuche.jpeg"
+    },
+    {
+        "wineTitle": "Vermut červený",
+        "price": "30",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
+        "imgTitle": "Vermut_cerveny.jpeg"
     }
 ]`
 
