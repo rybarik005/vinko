@@ -13,23 +13,26 @@
     <title>Hello, world!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Zen+Antique&display=swap" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/gallery.css" rel="stylesheet">
-    <link href="../css/wine.css" rel="stylesheet"  >
+    <link href="../css/wine.css" rel="stylesheet">
+    <link href="../css/contact.css" rel="stylesheet">
     <style>
         .normal {
             height: 100vh;
             max-height: 100vh;
-
+       
         }
-        section{
+
+        section {
             overflow: hidden;
+     
         }
     </style>
 </head>
 
-<body >
+<body>
 
     <!-- Navigation-->
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
@@ -65,7 +68,7 @@
             </div>
         </div>
     </nav>
-  
+
     <!-- Main -->
     <section id="main" class="bg-primary normal" style="overflow: hidden;">
 
@@ -77,7 +80,7 @@
         background-position:center;
         min-height: 100%;
        ">
-            <h1 class="main-title" style="margin-bottom: 5%;"class="text-white fw-bold">Víno <br> &nbsp Vašš</h1>
+            <h1 class="main-title" style="margin-bottom: 5%;" class="text-white fw-bold">Víno <br> &nbsp Vašš</h1>
         </div>
 
 
@@ -85,10 +88,10 @@
     </section>
 
     <!--Wine-->
-    <section id="wine" >
+    <section id="wine">
         <h1 class="section-title" class="text-white fw-bold">Naše Víno</h1>
-        <div class="row" id="carouselContainer">
-            <div class="MultiCarousel"id="MultiCarousel" >
+        <div class="row d-none d-lg-block" id="carouselContainer">
+            <div class="MultiCarousel" id="MultiCarousel">
                 <div class="controller">
                     <a class="control prev" id="prev" href="#recipeCarousel" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -98,17 +101,40 @@
                     </a>
                 </div>
                 <div id="MultiCarousel-inner" style="width: 5000px">
-    
+
                 </div>
-    
+
             </div>
-    
-    
+        </div>
+
+        <div id="myWineCarousel" class="carousel slide d-lg-none" style="height:700px;" data-bs-interval="false" data-interval="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner bg-primary">
+                <div class="carousel-item active ">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
     </section>
+
     <!--Photo Gallery-->
-    <section id="gallery" class="bg-warning" style="height: min(100vh,80vw)">
+    <section id="gallery" class="" style="background-color:#777;height: 100vh">
+        <h1 class="section-title" class="text-white fw-bold">Galéria</h1>
         <div id="myCarousel" class="carousel slide d-none d-lg-block" data-bs-interval="false" data-interval="false">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
@@ -116,7 +142,7 @@
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner bg-primary">
                 <div class="carousel-item active ">
                     <div class="container-md square-container">
                         <div class="row row-cols-3 square ">
@@ -145,18 +171,7 @@
                                 <div class="imgItemContainer">
                                 </div>
                             </div>
-                            <div class="src ">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src ">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src ">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -207,7 +222,7 @@
     </section>
     <!--About us-->
     <section id="about" class="normal">
-   
+
     </section>
 
     <!--Contact-->
@@ -216,7 +231,7 @@
     </section>
 
 
-    
+
     <!-- <script src="../javascript/gallery.js"></script> -->
     <script src="../javascript/json.js"></script>
     <script src="../javascript/wine.js"></script>

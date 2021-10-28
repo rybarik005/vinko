@@ -29,8 +29,16 @@ var wineData = getData();
 let initial = 0;
 
 var numberOfItems = wineData.length;
+//ak je menej vín ako 5 (minimun pre slider), array sa znásobí aby length > 5
+if(numberOfItems < 5){
+
+  while(numberOfItems < 5){
+    wineData = wineData.concat(wineData);
+    numberOfItems = wineData.length;
+  }
+}
+numberOfItems = wineData.length;
 function doSlider() {
-  console.log("heyy");
   parent = document.getElementById("MultiCarousel-inner");
   viewportWidth = window.innerWidth;
   setElementSizes(viewportWidth);
@@ -42,13 +50,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 window.onresize = function () {
-  console.log("resize");
   viewportWidth = window.innerWidth;
   setElementSizes(viewportWidth);
 };
 
 function setElementSizes(viewPortWidth) {
-  console.log("resizing...");
   //itemWidth = viewPortWidth / 2;
 
   parent.style.width = itemWidth * numberOfItems + "px";
@@ -68,7 +74,6 @@ function setElementSizes(viewPortWidth) {
 // function addItem(index) {
 //   var padding = index == 2 ? "1" : "5";
 //   var obj = wineData[parseInt(index)];
-//   console.log(obj);
 //   parent.insertAdjacentHTML(
 //     "afterbegin",
 //     '<div data-index="'+index +'"; data-transform="'+itemWidth * index +'" class="p-'+ padding +
@@ -100,8 +105,8 @@ function setElementSizes(viewPortWidth) {
 
 function addItem(index) {
   var padding = index == 2 ? '1' : '5';
+  var zindex = index == 2 ? '2' : '0';
   var obj = wineData[parseInt(index)];
-  console.log(obj);
   parent.insertAdjacentHTML(
     "afterbegin",
     '\
@@ -110,7 +115,7 @@ function addItem(index) {
       '"; data-transform="' +
       itemWidth * index +
       '" class="p-'+ padding + ' card col wine-card"\
-     style="background-color: transparent; transform: translateX(' +
+     style="z-index:'+zindex + ';background-color: transparent; transform: translateX(' +
       itemWidth * index +
       "px); position: absolute; float: left;width:" +
       itemWidth +
@@ -119,12 +124,14 @@ function addItem(index) {
       'px; min-height: 580px;">\
         <div class="card-body p-0" style="display:flex; flex-direction:row" >\
             <div class="card-left" style="flex:1;">\
-            <div class="p-5" style="height: 80%; margin-top: 10%;">\
-              <h1 class="">' + obj.wineTitle +'</h4>\
-              <p class="card-text">' + obj.description +'</p>\
+              <div class="p-5 left-padded"">\
+                <h1 class="card-title">' + obj.wineTitle +'</h4>\
+                <p class="card-text"><b>Popis: </b>' + obj.description +'</p>\
                 <div class="row">\
-                <h5 class="col-6">Cena:</h5>\
-                  <p class="col-6">' + obj.price +'€</p>\
+                  <p class="col-6 card-price">' + obj.price +'€</p>\
+                  <a style="flex:1" href="#contact">\
+                    <button type="button" class="btn btn-secondary" style="margin-top:10%;width:100%; height:60%;">Kúpiť</button>\
+                  </a>\
                 </div>\
               </div>\
             </div>\
@@ -154,6 +161,7 @@ function updateCards(direction) {
     el.classList.remove("p-1");
     el.classList.remove("p-5");
     el.classList.add("p-5");
+    el.style.zIndex = "0"
     if (el.getAttribute("data-index") > highest.getAttribute("data-index")) {
       highest = el;
     }
@@ -170,12 +178,6 @@ function updateCards(direction) {
       }
     }
   });
-  console.log("lowest: ");
-  console.log(lowest);
-  console.log("highest: ");
-  console.log(highest);
-
-  console.log("data indeex" + highest.getAttribute("data-index"));
 
   if (
     parseInt(highest.getAttribute("data-index")) >= numberOfItems - 1 &&
@@ -199,9 +201,7 @@ function updateCards(direction) {
 
   middle.classList.add("p-1");
   middle.classList.remove("p-5");
-  console.log("middle");
-  console.log(document.getElementsByClassName("p-1"));
-  console.log("middle");
+  middle.style.zIndex = "2";
 }
 
 const throttle = (func, limit) => {
@@ -228,40 +228,33 @@ window.onload = function () {
   let rightBtn = document.getElementById("next");
   let leftBtn = document.getElementById("prev");
 
-  rightBtn.onclick = throttle(function clicked() {
-    console.log("click");
+  leftBtn.onclick = throttle(function clicked() {
     updateCards(1);
     let cards = document.querySelectorAll(".card");
-    console.log(cards);
     cards.forEach((el) => {
       let trans = parseInt(el.getAttribute("data-transform"));
       el.setAttribute("data-transform", trans + itemWidth);
       el.style.transform =
         "translateX(" + el.getAttribute("data-transform") + "px)";
       let index = el.getAttribute("data-index");
-      console.log(index + "<- index");
       el.setAttribute("data-index", parseInt(index) + 1);
     });
   },800);
 
-  leftBtn.onclick = throttle(function clicked() {
-    console.log("click");
+  rightBtn.onclick = throttle(function clicked() {
     updateCards(0);
     let cards = document.querySelectorAll(".card");
-    console.log(cards);
     cards.forEach((el) => {
       let trans = parseInt(el.getAttribute("data-transform"));
       el.setAttribute("data-transform", trans - itemWidth);
       el.style.transform =
         "translateX(" + el.getAttribute("data-transform") + "px)";
       let index = el.getAttribute("data-index");
-      console.log(index + "<- index");
       el.setAttribute("data-index", parseInt(index) - 1);
     });
   },800);
 
   window.addEventListener("click", (e) => {
     const target = e.target.className;
-    console.log(target);
   });
 };
