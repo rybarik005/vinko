@@ -65,8 +65,41 @@ function setElementSizes(viewPortWidth) {
   });
 }
 
+// function addItem(index) {
+//   var padding = index == 2 ? "1" : "5";
+//   var obj = wineData[parseInt(index)];
+//   console.log(obj);
+//   parent.insertAdjacentHTML(
+//     "afterbegin",
+//     '<div data-index="'+index +'"; data-transform="'+itemWidth * index +'" class="p-'+ padding +
+//     ' card col"style="background-color: transparent; transform: translateX(' +itemWidth * index +'px);width:1000px; min-height: 580px;">\
+//         <div class="card-body" >\
+//                 <div class="row bg-primary" style="height:580px">\
+//                     <div class="col-6 p-4 bg-warning">\
+//                         <h4 class="card-title">' + obj.wineTitle +'</h4>\
+//                         <p class="card-text">' + obj.description +'</p>\
+//                         <div class="row">\
+//                             <h5 class="col-6">Cena:</h5>\
+//                             <p class="col-6">' +obj.price +'€</p>\
+//                         </div>\
+//                         <div class="row bg-danger">\
+//                             <div class="justify-content-center">\
+//                                 <a href="#contact" class="btn btn-primary">Kúpiť</a>\
+//                             </div>\
+//                         </div>\
+//                     </div>\
+//                 </div>\
+//         </div>\
+//     </div>'
+//   );
+// }
+
+// <img src="../../vinko/assets/wines/' +
+// obj.imgTitle +
+// '" alt="" class="col-5 p-0">\
+
 function addItem(index) {
-  var padding = index == 2 ? "1" : "5";
+  var padding = index == 2 ? '1' : '5';
   var obj = wineData[parseInt(index)];
   console.log(obj);
   parent.insertAdjacentHTML(
@@ -76,9 +109,7 @@ function addItem(index) {
       index +
       '"; data-transform="' +
       itemWidth * index +
-      '" class="p-' +
-      padding +
-      ' card col"\
+      '" class="p-'+ padding + ' card col wine-card"\
      style="background-color: transparent; transform: translateX(' +
       itemWidth * index +
       "px); position: absolute; float: left;width:" +
@@ -86,38 +117,27 @@ function addItem(index) {
       "px; height: " +
       itemWidth * 0.520833 +
       'px; min-height: 580px;">\
-        <div class="card-body p-0" >\
-            <div class="container">\
+        <div class="card-body p-0" style="display:flex; flex-direction:row" >\
+            <div class="card-left" style="flex:1;">\
+            <div class="p-5" style="height: 80%; margin-top: 10%;">\
+              <h1 class="">' + obj.wineTitle +'</h4>\
+              <p class="card-text">' + obj.description +'</p>\
                 <div class="row">\
-                    <div class="col-7 p-4">\
-                        <h4 class="card-title">' +
-      obj.wineTitle +
-      '</h4>\
-                        <p class="card-text">' +
-      obj.description +
-      '</p>\
-                        <div class="row">\
-                            <h5 class="col-6">Cena:</h5>\
-                            <p class="col-6">' +
-      obj.price +
-      '€</p>\
-                        </div>\
-                        <div class="row">\
-                            <div class="justify-content-center">\
-                                <a href="#contact" class="btn btn-primary">Kúpiť</a>\
-                            </div>\
-                        </div>\
-                    </div>\
-                    <img src="../../vinko/assets/wines/' +
-      obj.imgTitle +
-      '" alt="" class="col-5 p-0">\
+                <h5 class="col-6">Cena:</h5>\
+                  <p class="col-6">' + obj.price +'€</p>\
                 </div>\
+              </div>\
+            </div>\
+            <div class="card-right" style="flex:1; display:flex; overflow: hidden;">\
+              <div class="wine-img" style="flex:1; background-image:url(\'../../vinko/assets/wines/' +obj.imgTitle+ '\')">\
+              </div>\
             </div>\
         </div>\
     </div>\
        '
   );
 }
+
 
 function addNWines(count) {
   for (var i = 0; i < count; i++) {
@@ -184,11 +204,31 @@ function updateCards(direction) {
   console.log("middle");
 }
 
+const throttle = (func, limit) => {
+  let lastFunc
+  let lastRan
+  return function() {
+    const context = this
+    const args = arguments
+    if (!lastRan) {
+      func.apply(context, args)
+      lastRan = Date.now()
+    } else {
+      clearTimeout(lastFunc)
+      lastFunc = setTimeout(function() {
+        if ((Date.now() - lastRan) >= limit) {
+          func.apply(context, args)
+          lastRan = Date.now()
+        }
+      }, limit - (Date.now() - lastRan))
+    }
+  }
+}
 window.onload = function () {
   let rightBtn = document.getElementById("next");
   let leftBtn = document.getElementById("prev");
 
-  rightBtn.onclick = function clicked() {
+  rightBtn.onclick = throttle(function clicked() {
     console.log("click");
     updateCards(1);
     let cards = document.querySelectorAll(".card");
@@ -202,9 +242,9 @@ window.onload = function () {
       console.log(index + "<- index");
       el.setAttribute("data-index", parseInt(index) + 1);
     });
-  };
+  },800);
 
-  leftBtn.onclick = function clicked() {
+  leftBtn.onclick = throttle(function clicked() {
     console.log("click");
     updateCards(0);
     let cards = document.querySelectorAll(".card");
@@ -218,7 +258,7 @@ window.onload = function () {
       console.log(index + "<- index");
       el.setAttribute("data-index", parseInt(index) - 1);
     });
-  };
+  },800);
 
   window.addEventListener("click", (e) => {
     const target = e.target.className;
