@@ -22,12 +22,16 @@
         .normal {
             height: 100vh;
             max-height: 100vh;
-       
+
         }
 
         section {
             overflow: hidden;
-     
+            scroll-snap-align: start;
+        }
+        html, body{
+            scroll-snap-type: y proximity;
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -107,28 +111,39 @@
             </div>
         </div>
 
-        <div id="myWineCarousel" class="carousel slide d-lg-none" style="height:700px;" data-bs-interval="false" data-interval="false">
+
+        <div id="" class="carousel slide d-lg-none" style="height:700px;" data-bs-ride="false">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner bg-primary">
-                <div class="carousel-item active ">
+            <div class="carousel-inner" style="height:700px;">
+                <div class="carousel-item active" style="height:700px;">
+                    <img src="..." class="d-block w-100" alt="...">
                 </div>
-
+                <div class="carousel-item" style="height:700px;">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" style="height:700px;">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
 
     </section>
 
@@ -171,7 +186,10 @@
                                 <div class="imgItemContainer">
                                 </div>
                             </div>
-
+                            <div class="src">
+                                <div class="imgItemContainer">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -221,12 +239,12 @@
 
     </section>
     <!--About us-->
-    <section id="about" class="normal">
+    <section id="about" style="background-color: #848c70;" class="normal">
 
     </section>
 
     <!--Contact-->
-    <section id="contact" class="bg-primary normal">
+    <section id="contact" class="bg-secondary normal">
 
     </section>
 
