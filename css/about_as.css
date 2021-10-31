@@ -2,9 +2,9 @@
     background-color: #848c70;
 }
 
-p{
-    float: center;
+.text{
+    color: white;
     font-family:'Times New Roman', Times, serif;
     font-size: x-large;
-    padding: 5%;
+    padding: 5px;
 }
