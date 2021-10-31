@@ -15,13 +15,13 @@ var data = `[
         "wineTitle": "Furmint suchý",
         "price": "28",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
-        "imgTitle": "image2.jpg"
+        "imgTitle": "vermut_biely.jpeg"
     },
     {
         "wineTitle": "Lipovina suchá 2019",
         "price": "40",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, mollitia!",
-        "imgTitle": "lipovina_sucha.jpeg"
+        "imgTitle": "lipovina_suche.jpeg"
     },
     {
         "wineTitle": "Cuvé polosuché 2019",

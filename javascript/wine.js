@@ -22,6 +22,7 @@
 //     </div>
 // </div>
 // </div> */
+
 var parent= document.getElementById("MultiCarousel-inner");
 var viewportWidth = window.innerWidth;
 var itemWidth = 1000;
@@ -29,8 +30,30 @@ var wineData = getData();
 let initial = 0;
 
 var numberOfItems = wineData.length;
+//ak je menej vín ako 5 (minimun pre slider), array sa znásobí aby length > 5
+if(numberOfItems < 5){
+  while(numberOfItems < 5){
+    wineData = wineData.concat(wineData);
+    numberOfItems = wineData.length;
+  }
+}
+numberOfItems = wineData.length;
+
+function addAnimationToCard(){
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(function (card) {
+    card.style.transition = "0.8s ease-in-out";
+    card.style.webkitTransition= "0.8s ease-in-out";
+  });
+}
+function removeAnimationToCard(){
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(function (card) {
+    card.style.transition = "0s";
+    card.style.webkitTransition= "0s";
+  });
+}
 function doSlider() {
-  console.log("heyy");
   parent = document.getElementById("MultiCarousel-inner");
   viewportWidth = window.innerWidth;
   setElementSizes(viewportWidth);
@@ -42,15 +65,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 window.onresize = function () {
-  console.log("resize");
+  console.log("resizing!!!");
   viewportWidth = window.innerWidth;
   setElementSizes(viewportWidth);
-};
-
+}
+function isDocumentInFullScreenMode() {
+  return document.fullscreenElement !== null;
+}
+var doit;
 function setElementSizes(viewPortWidth) {
-  console.log("resizing...");
-  //itemWidth = viewPortWidth / 2;
-
+  removeAnimationToCard();
+  if(viewPortWidth < 1050){
+    itemWidth = viewPortWidth - (25*2);
+  }else{
+    itemWidth = 1000;
+  }
   parent.style.width = itemWidth * numberOfItems + "px";
   // parent.style.marginLeft = -(itemWidth + itemWidth/2); // toto je ak chceš z každej strany
   let sideWidth = (viewPortWidth - itemWidth) / 2;
@@ -63,12 +92,16 @@ function setElementSizes(viewPortWidth) {
     card.setAttribute("data-transform", itemWidth * index);
     card.style.transform = "translateX(" + itemWidth * index + "px)";
   });
+    clearTimeout(doit);
+    doit = setTimeout(resizedFinished, 100);
+}
+function resizedFinished(){
+  addAnimationToCard();
 }
 
 // function addItem(index) {
 //   var padding = index == 2 ? "1" : "5";
 //   var obj = wineData[parseInt(index)];
-//   console.log(obj);
 //   parent.insertAdjacentHTML(
 //     "afterbegin",
 //     '<div data-index="'+index +'"; data-transform="'+itemWidth * index +'" class="p-'+ padding +
@@ -98,10 +131,16 @@ function setElementSizes(viewPortWidth) {
 // obj.imgTitle +
 // '" alt="" class="col-5 p-0">\
 
-function addItem(index) {
+function addNWines(count) {
+  for (var i = 0; i < count; i++) {
+    addItemBig(count - 1 - i);
+  }
+}
+
+function addItemBig(index) {
   var padding = index == 2 ? '1' : '5';
+  var zindex = index == 2 ? '2' : '0';
   var obj = wineData[parseInt(index)];
-  console.log(obj);
   parent.insertAdjacentHTML(
     "afterbegin",
     '\
@@ -110,39 +149,44 @@ function addItem(index) {
       '"; data-transform="' +
       itemWidth * index +
       '" class="p-'+ padding + ' card col wine-card"\
-     style="background-color: transparent; transform: translateX(' +
+     style="z-index:'+zindex + ';background-color: transparent; transform: translateX(' +
       itemWidth * index +
       "px); position: absolute; float: left;width:" +
       itemWidth +
       "px; height: " +
       itemWidth * 0.520833 +
       'px; min-height: 580px;">\
-        <div class="card-body p-0" style="display:flex; flex-direction:row" >\
-            <div class="card-left" style="flex:1;">\
-            <div class="p-5" style="height: 80%; margin-top: 10%;">\
-              <h1 class="">' + obj.wineTitle +'</h4>\
-              <p class="card-text">' + obj.description +'</p>\
-                <div class="row">\
-                <h5 class="col-6">Cena:</h5>\
-                  <p class="col-6">' + obj.price +'€</p>\
-                </div>\
-              </div>\
+      <div class="card-body p-0" style="display:flex; flex-direction:row" >\
+        <div class="card-left d-none d-md-flex" style="flex:1;">\
+           <div class="p-5 left-padded"">\
+            <h1 class="card-title">' + obj.wineTitle +'</h4>\
+            <p class="card-text"><b>Popis: </b>' + obj.description +'</p>\
+            <div class="row">\
+              <p class="col-6 card-price">' + obj.price +'€</p>\
+              <a style="flex:1" href="#contact">\
+                <button type="button" class="btn btn-dark" style="margin-top:10%;width:100%; height:60%;">Kúpiť</button>\
+              </a>\
             </div>\
-            <div class="card-right" style="flex:1; display:flex; overflow: hidden;">\
-              <div class="wine-img" style="flex:1; background-image:url(\'../../vinko/assets/wines/' +obj.imgTitle+ '\')">\
-              </div>\
-            </div>\
+          </div>\
         </div>\
+          <div class="card-right" style="flex:1; background-color:white; display:flex;flex-direction:column">\
+            <div class="wine-img" style="flex:3; background-image:url(\'../../vinko/assets/wines/' +obj.imgTitle+ '\')">\
+            </div>\
+            <div class="p-4  d-md-none" style="flex:1;">\
+              <h1 class="card-title"style="text-align:center">' + obj.wineTitle +'</h4>\
+              <p class="card-text" style="text-align:center">' + obj.description +'</p>\
+              <div class="">\
+                <a style="" href="#contact">\
+                  <button type="button" class="btn btn-dark" style="margin-left:25%;width:50%; height:60%;">Kúpiť - ' + obj.price+ '€</button>\
+                </a>\
+            </div>\
+            </div>\
+          </div>\
+        </div>\
+      </div>\
     </div>\
        '
   );
-}
-
-
-function addNWines(count) {
-  for (var i = 0; i < count; i++) {
-    addItem(count - 1 - i);
-  }
 }
 
 function updateCards(direction) {
@@ -154,6 +198,7 @@ function updateCards(direction) {
     el.classList.remove("p-1");
     el.classList.remove("p-5");
     el.classList.add("p-5");
+    el.style.zIndex = "0"
     if (el.getAttribute("data-index") > highest.getAttribute("data-index")) {
       highest = el;
     }
@@ -170,12 +215,6 @@ function updateCards(direction) {
       }
     }
   });
-  console.log("lowest: ");
-  console.log(lowest);
-  console.log("highest: ");
-  console.log(highest);
-
-  console.log("data indeex" + highest.getAttribute("data-index"));
 
   if (
     parseInt(highest.getAttribute("data-index")) >= numberOfItems - 1 &&
@@ -199,9 +238,7 @@ function updateCards(direction) {
 
   middle.classList.add("p-1");
   middle.classList.remove("p-5");
-  console.log("middle");
-  console.log(document.getElementsByClassName("p-1"));
-  console.log("middle");
+  middle.style.zIndex = "2";
 }
 
 const throttle = (func, limit) => {
@@ -228,40 +265,35 @@ window.onload = function () {
   let rightBtn = document.getElementById("next");
   let leftBtn = document.getElementById("prev");
 
-  rightBtn.onclick = throttle(function clicked() {
-    console.log("click");
+  leftBtn.onclick = throttle(function clicked() {
     updateCards(1);
     let cards = document.querySelectorAll(".card");
-    console.log(cards);
     cards.forEach((el) => {
       let trans = parseInt(el.getAttribute("data-transform"));
       el.setAttribute("data-transform", trans + itemWidth);
       el.style.transform =
         "translateX(" + el.getAttribute("data-transform") + "px)";
       let index = el.getAttribute("data-index");
-      console.log(index + "<- index");
       el.setAttribute("data-index", parseInt(index) + 1);
     });
   },800);
 
-  leftBtn.onclick = throttle(function clicked() {
-    console.log("click");
+  rightBtn.onclick = throttle(function clicked() {
     updateCards(0);
     let cards = document.querySelectorAll(".card");
-    console.log(cards);
     cards.forEach((el) => {
       let trans = parseInt(el.getAttribute("data-transform"));
       el.setAttribute("data-transform", trans - itemWidth);
       el.style.transform =
         "translateX(" + el.getAttribute("data-transform") + "px)";
       let index = el.getAttribute("data-index");
-      console.log(index + "<- index");
       el.setAttribute("data-index", parseInt(index) - 1);
     });
   },800);
 
   window.addEventListener("click", (e) => {
     const target = e.target.className;
-    console.log(target);
   });
+
+  setElementSizes( window.innerWidth);
 };
