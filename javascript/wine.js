@@ -170,7 +170,7 @@ function addItemBig(index) {
           </div>\
         </div>\
           <div class="card-right" style="flex:1; background-color:white; display:flex;flex-direction:column">\
-            <div class="wine-img" style="flex:3; background-image:url(\'../../vinko/assets/wines/' +obj.imgTitle+ '\')">\
+            <div class="wine-img" style="flex:3; background-image:url(\'../assets/wines/' +obj.imgTitle+ '\')">\
             </div>\
             <div class="p-4  d-md-none" style="flex:1;">\
               <h1 class="card-title"style="text-align:center">' + obj.wineTitle +'</h4>\
