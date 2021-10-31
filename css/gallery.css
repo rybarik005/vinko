@@ -1,4 +1,4 @@
-.carousel-item {
+.carousel-item{
   height: min(100vh, 80vw);
   max-height: 100vh;
   background: #777;
