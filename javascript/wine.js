@@ -26,6 +26,7 @@
 var parent= document.getElementById("MultiCarousel-inner");
 var viewportWidth = window.innerWidth;
 var itemWidth = 1000;
+var itemHeight = 580;
 var wineData = getData();
 let initial = 0;
 
@@ -77,9 +78,12 @@ function setElementSizes(viewPortWidth) {
   removeAnimationToCard();
   if(viewPortWidth < 1050){
     itemWidth = viewPortWidth - (25*2);
+    itemHeight = itemWidth * 0.580;
   }else{
     itemWidth = 1000;
+    itemHeight = 580;
   }
+  parent.style.width = itemWidth * numberOfItems + "px";
   parent.style.width = itemWidth * numberOfItems + "px";
   // parent.style.marginLeft = -(itemWidth + itemWidth/2); // toto je ak chceš z každej strany
   let sideWidth = (viewPortWidth - itemWidth) / 2;
@@ -88,6 +92,7 @@ function setElementSizes(viewPortWidth) {
   let cards = document.querySelectorAll(".card");
   cards.forEach(function (card) {
     card.style.width = itemWidth + "px";
+    card.style.height = itemHeight + "px";
     var index = card.getAttribute("data-index");
     card.setAttribute("data-transform", itemWidth * index);
     card.style.transform = "translateX(" + itemWidth * index + "px)";
@@ -141,6 +146,7 @@ function addItemBig(index) {
   var padding = index == 2 ? '1' : '5';
   var zindex = index == 2 ? '2' : '0';
   var obj = wineData[parseInt(index)];
+  var calcHeight = itemWidth * 0.580;
   parent.insertAdjacentHTML(
     "afterbegin",
     '\
@@ -154,8 +160,8 @@ function addItemBig(index) {
       "px); position: absolute; float: left;width:" +
       itemWidth +
       "px; height: " +
-      itemWidth * 0.520833 +
-      'px; min-height: 580px;">\
+      calcHeight +
+      'px; min-height: 80%">\
       <div class="card-body p-0" style="display:flex; flex-direction:row" >\
         <div class="card-left d-none d-md-flex" style="flex:1;">\
            <div class="p-5 left-padded"">\

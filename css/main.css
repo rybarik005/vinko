@@ -1,15 +1,35 @@
 .main-title {
-
-    font-family: 'Festive', cursive;
-    font-size: 10em;
-    color: white;
-    font-weight: bold;
+  font-family: "Festive", cursive;
+  font-size: max(10vh,10vw);
+  color: white;
+  font-weight: bold;
 }
-
+.main-title-div .right {
+  animation: 1.5s ease-in 0.5s reverse both running flyinR;
+}
+.main-title-div .left {
+  animation: 1.5s ease-in 0.5s reverse both running flyinL;
+}
 .section-title {
-    padding-top:5%;
-    text-align: center;
-    font-family: 'Festive', cursive;
-    color: white;
-    font-weight: bold;
+  padding-top: 65px;
+  text-align: center;
+  font-family: "Festive", cursive;
+  color: white;
+  font-weight: bold;
+}
+@keyframes flyinR {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+@keyframes flyinL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
 }
