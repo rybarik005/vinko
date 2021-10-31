@@ -1,0 +1,10 @@
+#about{
+    background-color: #848c70;
+}
+
+p{
+    float: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: x-large;
+    padding: 5%;
+}
