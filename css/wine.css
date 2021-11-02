@@ -3,8 +3,8 @@
   background-color: #848c70;
   height: 100%;
   min-height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
+  /* max-height: 100vh; */
+  /* overflow: hidden; */
 }
 .card {
   position: absolute;
@@ -84,4 +84,5 @@
   overflow: hidden;
   /* background-color: #123abc;  */
   width: 100%;
+  /* margin-bottom: 5%; */
 }

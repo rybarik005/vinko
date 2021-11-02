@@ -22,18 +22,17 @@
         .normal {
             height: 100vh;
             max-height: 100vh;
-
         }
 
         section {
             overflow: hidden;
-            scroll-snap-align: start;
+            /* scroll-snap-align: start; */
         }
 
         html,
         body {
-            scroll-snap-type: y proximity;
-            scroll-behavior: smooth;
+            /* scroll-snap-type: y proximity;
+            scroll-behavior: smooth; */
         }
     </style>
 </head>
@@ -87,12 +86,10 @@
         min-height: 100%;
        ">
             <div class="main-title-div" style="margin-bottom: 5%;" class="text-white fw-bold">
-                <h1 class="display-1 main-title right">Víno</h1> <h1 class="main-title left">&nbsp Vašš</h1>
+                <h1 class="display-1 main-title right">Víno</h1>
+                <h1 class="main-title left">&nbsp Vašš</h1>
             </div>
         </div>
-
-
-
     </section>
 
     <!--Wine-->
@@ -109,97 +106,73 @@
         <h1 class="section-title display-1" class="text-white fw-bold">Naše Víno</h1>
         <div class="row" id="carouselContainer">
             <div class="MultiCarousel" id="MultiCarousel">
-               
+
                 <div id="MultiCarousel-inner" style="width: 5000px">
 
                 </div>
 
             </div>
         </div>
-
-
-        <!-- <div id="" class="carousel slide d-lg-none" style="height:700px;" data-bs-ride="false">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner" style="height:700px;">
-                <div class="carousel-item active" style="height:700px;">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" style="height:700px;">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" style="height:700px;">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div> -->
-
-
     </section>
 
     <!--Photo Gallery-->
-    <section id="gallery" class="" style="background-color:#777;height: 100vh">
+    <section id="gallery" class="">
         <h1 class="section-title display-1" class="text-white fw-bold">Galéria</h1>
         <div id="myCarousel" class="carousel slide d-none d-lg-block" data-bs-interval="false" data-interval="false">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner bg-primary">
+            <div class="carousel-inner">
                 <div class="carousel-item active ">
-                    <div class="container-md square-container">
-                        <div class="row row-cols-3 square ">
-                            <div class="src ">
-                                <div class="imgItemContainer"
-                                    style="background-image: url('../../vinko/assets/backgroundMainPage.jpg');">
+                    <div class="con d-flex justify-content-center align-items-center flex-column">
+
+                        <div class="container-md square-container">
+                            <div class="row row-cols-3 square ">
+                                <div class="src ">
+                                    <div class="imgItemContainer"
+                                        style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                                    </div>
+                                </div>
+                                <div class="src ">
+                                    <div class="imgItemContainer"
+                                        style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                                    </div>
+                                </div>
+                                <div class="src ">
+                                    <div class="imgItemContainer"
+                                        style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                                    </div>
+                                </div>
+                                <div class="src ">
+                                    <div class="imgItemContainer"
+                                        style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                                    </div>
+                                </div>
+                                <div class="src ">
+                                    <div class="imgItemContainer"
+                                        style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                                    </div>
+                                </div>
+                                <div class="src ">
+                                    <div class="imgItemContainer"
+                                        style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="src ">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src ">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src ">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
-                            <div class="src">
-                                <div class="imgItemContainer">
-                                </div>
-                            </div>
+                         </div>
+                         <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                         </div>
                     </div>
-
                 </div>
+
                 <div class="carousel-item">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -214,10 +187,11 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="carousel-item">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
+                        <rect width="100%" height="100%" fill="#" />
                     </svg>
 
                     <div class="container">
@@ -239,6 +213,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
         <div class="container d-lg-none">
             <h1>pracuje sa na tom... </h1>
         </div>
