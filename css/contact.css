@@ -1,4 +1,21 @@
 #contact{ 
-    height: 40vh;
+    height: 70vh;
     background-color: #848c70;
+}
+.ramcek{
+    color: white;
+    padding-right: 10%;
+    padding-left: 60%;
+}
+.add{
+    padding-left: 5%;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 150%;
+
+}
+.poslat{
+    margin-top: 5px;
+    background-color: skyblue;
+    border-radius: 10px;
 }

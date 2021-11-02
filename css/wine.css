@@ -6,6 +6,7 @@
   /* max-height: 100vh; */
   /* overflow: hidden; */
 }
+
 .card {
   position: absolute;
   left: 0;
@@ -80,7 +81,7 @@
 .MultiCarousel {
   display: flex;
   align-items: center;
-  height: 700px;
+  height: 100%;
   overflow: hidden;
   /* background-color: #123abc;  */
   width: 100%;
