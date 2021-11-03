@@ -1,12 +1,12 @@
 #gallery{
   min-height: 100vh;
-  background-color: grey;
+  background-color: #777;
 }
 .carousel-item{
   height: 100%;
   /* max-height: 100vh; */
   /* background: blue; */
-  margin: 0 auto;
+  
 }
 .gallery-title{
 
@@ -17,7 +17,7 @@
   font-weight: bold;
 }
 #myCarousel {
-  background-color: grey;
+  background-color: #777;
   height:max(80vh,900px);
 }
 .con{
@@ -44,8 +44,7 @@
   background-size: cover;
   background-position: center;
   flex: 1;
-  background-color: grey;
-  background-color: #abcaba;
+  background-color: #777;
 
 }
 
