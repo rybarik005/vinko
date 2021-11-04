@@ -18,23 +18,6 @@
     <link href="../css/gallery.css" rel="stylesheet">
     <link href="../css/wine.css" rel="stylesheet">
     <link href="../css/contact.css" rel="stylesheet">
-    <style>
-        .normal {
-            height: 100vh;
-            max-height: 100vh;
-        }
-
-        section {
-            overflow: hidden;
-            /* scroll-snap-align: start; */
-        }
-
-        html,
-        body {
-            /* scroll-snap-type: y proximity;
-            scroll-behavior: smooth; */
-        }
-    </style>
 </head>
 
 <body>
@@ -122,11 +105,9 @@
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                    
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
             </div>
             <div class="carousel-inner" id="galleryParent">
 
@@ -144,8 +125,31 @@
         </div>
 
         <div class="container d-lg-none">
-            <h1>pracuje sa na tom... </h1>
+            <div class="caption mx-auto d-flex align-items-center justify-content-center flex-column  pt-2"
+                >
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/backgroundMainPage.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/backgroundMainPage.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/backgroundMainPage.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="caption mx-auto d-flex align-items-center justify-content-center flex-column mt-4"
+                    style="width: 80%;">
+                    <h1 class="text-center">Fotky vinice Leto 2019</h1>
+                    <p class="text-center">Some representative placeholder content for the second slide of the carousel.
+                    </p>
+                    <p><a class="btn btn-lg btn-primary" href="gallery.html">Všetky fotky</a></p>
+                </div>
+            </div>
         </div>
+
 
     </section>
     <!--About us-->
@@ -162,17 +166,14 @@
         <div class="ramcek">
             <label for="exampleFormControlInput1" class="form-label">Emailová adresa</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-          <div class="ramcek">
+        </div>
+        <div class="ramcek">
             <label for="exampleFormControlTextarea1" class="form-label">Správa</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             <button type="submit" class="btn btn-primary poslat">Poslať</button>
-          </div>
+        </div>
     </section>
 
-
-
-    >
     <script src="../javascript/json.js"></script>
     <script src="../javascript/wine.js"></script>
     <script src="../javascript/gallery.js"></script>
