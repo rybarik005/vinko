@@ -1,11 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 #contact{ 
-    height: 50vh;
+    height: 80vh;
     background-color: #848c70;
 }
 .ramcek{
     color: white;
     padding-right: 10%;
-    padding-left: 60%;
+    padding-left: 50%;
 }
 .add{
     padding-left: 5%;
