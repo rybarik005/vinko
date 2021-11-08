@@ -19,3 +19,8 @@
 .o_nas_text{
     width: 50%;
 }
+
+.o_nas_obrazok{
+    max-width: 30%;
+  height: auto;
+}

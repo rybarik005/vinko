@@ -125,9 +125,8 @@
         </div>
 
         <div class="container d-lg-none">
-            <div class="caption mx-auto d-flex align-items-center justify-content-center flex-column  pt-2"
-                >
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" >
+            <div class="caption mx-auto d-flex align-items-center justify-content-center flex-column  pt-2">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="../assets/backgroundMainPage.jpeg" class="d-block w-100" alt="...">
@@ -155,39 +154,49 @@
     <!--About us-->
     <section id="about" style="background-color: #848c70;" class="normal">
         <h1 class="section-title display-1" class="text-white fw-bold">O nás</h1>
-        <div  display: flex;
-        flex-direction: column;>
-            <div flex: 1;>
+        <div class="d-flex flex-row">
+            <div class="text2 bg-primary p-5">
                 <div class="o_nas_text">
-                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting 
-                        industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to 
-                        make a type specimen book. It has survived not only five centuries, but also 
-                        the leap into electronic typesetting, remaining essentially unchanged. It was 
-                        popularised in the 1960s with the release of Letraset sheets containing Lorem 
-                        Ipsum passages, and more recently with desktop publishing software like Aldus 
+                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                        the 1500s, when an unknown printer took a galley of type and scrambled it to
+                        make a type specimen book. It has survived not only five centuries, but also
+                        the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus
                         PageMaker including versions of Lorem Ipsum.</p>
-
                 </div>
             </div>
+            <div class="text2 bg-danger p-5 d-flex">
+                <!-- <div class="text2 imgItemContainer" style="background-image: url('../assets/backgroundMainPage.jpeg');">
+                </div> -->
+                <img class="o_nas_obrazok" src="../assets/backgroundMainPage.jpeg">
+            </div>
         </div>
-        
+
     </section>
 
     <!--Contact-->
     <section id="contact" class="bg-secondary normal">
-        <h1 class="section-title display-1" class="text-white fw-bold">Kontakt</h1>
-        <address class="add">0945464584</address>
-        <address class="add">mail@gmail.com</address>
-        <div class="ramcek">
-            <label for="exampleFormControlInput1" class="form-label">Emailová adresa</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <h1 class="section-title display-1" class="text-white fw-bold">Kontakt</h1>
+        <div class="d-flex flex-row">
+            <div class="text2 p-5">
+                <div>
+                    <address class="add">0945464584</address>
+                    <address class="add">mail@gmail.com</address>
+                </div>
+            </div>
+                <div class="ramcek1">
+                    <label for="exampleFormControlInput1" class="form-label">Emailová adresa</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="ramcek2">
+                    <label for="exampleFormControlTextarea1" class="form-label">Správa</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary poslat">Poslať</button>
+                </div>
         </div>
-        <div class="ramcek">
-            <label for="exampleFormControlTextarea1" class="form-label">Správa</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            <button type="submit" class="btn btn-primary poslat">Poslať</button>
-        </div>
+        
     </section>
 
     <script src="../javascript/json.js"></script>
@@ -200,3 +209,5 @@
 
 
 </html>
+
+<!-- makaj -->
