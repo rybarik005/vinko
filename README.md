@@ -1,1 +1,1 @@
-# vinkonepis nic 
+# vinkon

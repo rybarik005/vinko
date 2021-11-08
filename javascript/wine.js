@@ -79,12 +79,16 @@ function setElementSizes(viewPortWidth) {
   if(viewPortWidth < 1050){
     itemWidth = viewPortWidth - (25*2);
     itemHeight = itemWidth * 0.580;
+    parent.style.height = "90vh";
   }else{
     itemWidth = 1000;
     itemHeight = 580;
+    parent.style.height = itemHeight + "px";
   }
   parent.style.width = itemWidth * numberOfItems + "px";
   parent.style.width = itemWidth * numberOfItems + "px";
+
+
   // parent.style.marginLeft = -(itemWidth + itemWidth/2); // toto je ak chceš z každej strany
   let sideWidth = (viewPortWidth - itemWidth) / 2;
   parent.style.marginLeft= -(2 * itemWidth - sideWidth) +"px" ;
@@ -97,6 +101,7 @@ function setElementSizes(viewPortWidth) {
     card.setAttribute("data-transform", itemWidth * index);
     card.style.transform = "translateX(" + itemWidth * index + "px)";
   });
+
     clearTimeout(doit);
     doit = setTimeout(resizedFinished, 100);
 }
@@ -143,7 +148,7 @@ function addNWines(count) {
 }
 
 function addItemBig(index) {
-  var padding = index == 2 ? '1' : '5';
+  var padding = index == 2 ? '3' : '5';
   var zindex = index == 2 ? '2' : '0';
   var obj = wineData[parseInt(index)];
   var calcHeight = itemWidth * 0.580;
@@ -201,7 +206,7 @@ function updateCards(direction) {
   var lowest = cards[0];
   var middle = cards[0];
   cards.forEach((el) => {
-    el.classList.remove("p-1");
+    el.classList.remove("p-2");
     el.classList.remove("p-5");
     el.classList.add("p-5");
     el.style.zIndex = "0"

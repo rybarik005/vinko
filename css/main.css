@@ -12,6 +12,7 @@
 }
 .section-title {
   padding-top: 65px;
+  padding-bottom: 20px;
   text-align: center;
   font-family: "Festive", cursive;
   color: white;
@@ -32,4 +33,19 @@
   100% {
     transform: translateX(-100vw);
   }
+}
+.normal {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+section {
+  overflow: hidden;
+  /* scroll-snap-align: start; */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
