@@ -2,10 +2,17 @@
     height: 70vh;
     background-color: #848c70;
 }
-.ramcek{
+
+.text2{
+    flex: 1;
+}
+.ramcek1{
+    color: white;
+    padding-left: 10%;
+}
+.ramcek2{
     color: white;
     padding-right: 10%;
-    padding-left: 60%;
 }
 .add{
     padding-left: 5%;
