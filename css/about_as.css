@@ -4,23 +4,21 @@
 }
 
 #about{
-    background-color: #848c70;
+    background-color: var(--primary-color);
+    height: auto;
+    position:relative;
 }
 
 .text{
-    color: white;
-    font-family:'Times New Roman', Times, serif;
-    font-size: x-large;
-    padding: 5%;
-    margin: 5%;
-    float: left;
+
 }
 
 .o_nas_text{
-    width: 50%;
+
 }
 
 .o_nas_obrazok{
-    max-width: 30%;
-  height: auto;
+    width: 100%; 
+    height:auto;
+
 }

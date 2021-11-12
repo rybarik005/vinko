@@ -1,3 +1,8 @@
+:root{
+  --primary-color: #848c70;
+  --secondary-color: #777;
+  --radius: 40px;
+}
 .main-title {
   font-family: "Festive", cursive;
   font-size: max(10vh,10vw);
@@ -34,9 +39,25 @@
     transform: translateX(-100vw);
   }
 }
+
+.box-shadow{
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+
+.main-bg-image{
+  height: 100%;
+  background-image: url('../assets/backgroundMainPage.jpeg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  border-radius:0 0 30px 30px;
+
+}
 .normal {
   height: 100vh;
   max-height: 100vh;
+
 }
 
 section {
@@ -44,8 +65,14 @@ section {
   /* scroll-snap-align: start; */
 }
 
+.spacer{
+
+  height:5vh;
+  width:100%;
+}
 html,
 body {
+  background-color: var(--primary-color);
   margin: 0;
   padding: 0;
 }

@@ -18,7 +18,8 @@
     <link href="../css/gallery.css" rel="stylesheet">
     <link href="../css/wine.css" rel="stylesheet">
     <link href="../css/contact.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/scrollbar.css">
+    <link href="../css/about_as.css" rel="stylesheet">
+    <link href="../css/scrollbar.css"rel="stylesheet" >
 </head>
 
 <body>
@@ -59,16 +60,9 @@
     </nav>
 
     <!-- Main -->
-    <section id="main" class="bg-primary normal" style="overflow: hidden;">
+    <section id="main" class="normal" style="overflow: hidden;">
 
-        <div class="bg-image d-flex justify-content-center align-items-center" style="
-        height: 100%;
-        background-image: url('../assets/backgroundMainPage.jpeg');
-        background-repeat:no-repeat;
-        background-size:cover;
-        background-position:center;
-        min-height: 100%;
-       ">
+        <div class="bg-image d-flex justify-content-center align-items-center main-bg-image " >
             <div class="main-title-div" style="margin-bottom: 5%;" class="text-white fw-bold">
                 <h1 class="display-1 main-title right">Víno</h1>
                 <h1 class="main-title left">&nbsp Vašš</h1>
@@ -100,7 +94,7 @@
     </section>
 
     <!--Photo Gallery-->
-    <section id="gallery" class="">
+    <section id="gallery" class="box-shadow">
         <h1 class="section-title display-1" class="text-white fw-bold">Galéria</h1>
         <div id="myCarousel" class="carousel slide d-none d-lg-block" data-bs-interval="false" data-interval="false">
             <div class="carousel-indicators">
@@ -153,32 +147,53 @@
 
     </section>
     <!--About us-->
-    <section id="about" style="background-color: #848c70;" class="normal">
+    <section id="about" style="background-color: #848c70;" >
         <h1 class="section-title display-1" class="text-white fw-bold">O nás</h1>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-5 text2">
-                <div class="o_nas_text">
-                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to
-                        make a type specimen book. It has survived not only five centuries, but also
-                        the leap into electronic typesetting, remaining essentially unchanged. It was
-                        popularised in the 1960s with the release of Letraset sheets containing Lorem
-                        Ipsum passages, and more recently with desktop publishing software like Aldus
-                        PageMaker including versions of Lorem Ipsum.</p>
+        <div class="d-none d-lg-block">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-5 text2">
+                    <div class="o_nas_text">
+                        <h1 class="display-5">Catchy title</h1>
+                        <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but also
+                            the leap into electronic typesetting, remaining essentially unchanged. It was
+                            popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum passages, and more recently with desktop publishing software like Aldus
+                            PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
                 </div>
+                <div class="col-5 text2">
+                    <img class="o_nas_obrazok box-shadow" src="../assets/backgroundMainPage.jpeg" style="">
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-5 text2">
-                <img class="o_nas_obrazok" src="../assets/backgroundMainPage.jpeg" style="width: 100%; height:auto">
-            </div>
-            <div class="col-1"></div>
         </div>
-
+        <div class="container d-lg-none">
+            <div class="row">
+                        <h1 class="display-5 text-center">Catchy title</h1>
+                        <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but also
+                            the leap into electronic typesetting, remaining essentially unchanged. It was
+                            popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum passages, and more recently with desktop publishing software like Aldus
+                            PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div class="">
+                <img class="o_nas_obrazok box-shadow" src="../assets/backgroundMainPage.jpeg" style="">
+            </div>
+       
+        </div>
+        <div class="spacer"></div>
+    
     </section>
 
     <!--Contact-->
-    <section id="contact" class="bg-secondary normal">
+    <section id="contact" class="bg-secondary normal box-shadow">
     <h1 class="section-title display-1" class="text-white fw-bold">Kontakt</h1>
         <div class="d-flex flex-row">
             <div class="text2 p-5">

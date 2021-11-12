@@ -1,6 +1,7 @@
 #contact{ 
     height: 70vh;
-    background-color: #848c70;
+    background-color: var(--primary-color);
+    border-radius: var(--radius)  var(--radius) 0 0;
 }
 
 .text2{
