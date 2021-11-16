@@ -62,7 +62,7 @@
     <!-- Main -->
     <section id="main" class="normal" style="overflow: hidden;">
 
-        <div class="bg-image d-flex justify-content-center align-items-center main-bg-image " >
+        <div class="bg-image box-shadow d-flex justify-content-center align-items-center main-bg-image " >
             <div class="main-title-div" style="margin-bottom: 5%;" class="text-white fw-bold">
                 <h1 class="display-1 main-title right">Víno</h1>
                 <h1 class="main-title left">&nbsp Vašš</h1>
@@ -73,18 +73,25 @@
     <!--Wine-->
     <section id="wine">
         <!-- d-none d-lg-block -->
-        <div class="controller">
-            <a class="control prev" id="prev" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a class="control next" id="next" href="#recipeCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
-        </div>
+    
         <h1 class="section-title display-1" class="text-white fw-bold">Naše Víno</h1>
         <div class="row" id="carouselContainer">
             <div class="MultiCarousel" id="MultiCarousel">
-
+                <div class="controller">
+                    <a class="control prev" id="prev" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                        <div class="circle-carousel" >
+                            <div class="carousel-control-prev-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                    </a>
+                    <a class="control next " id="next" href="#recipeCarousel" role="button" data-bs-slide="next">
+                        <div class="circle-carousel" >
+                            <div class="carousel-control-next-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                      
+                    </a>
+                </div>
                 <div id="MultiCarousel-inner" style="width: 5000px">
 
                 </div>
