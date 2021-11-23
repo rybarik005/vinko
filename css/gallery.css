@@ -2,7 +2,6 @@
   min-height: 100vh;
   background-color: var(--secondary-color);
   border-radius: var(--radius);
-  
   padding-bottom: -20px;
   margin-bottom: 20px;
 }

@@ -6,7 +6,15 @@
   /* max-height: 100vh; */
   /* overflow: hidden; */
 }
-
+.circle-carousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  aspect-ratio: 1 / 1;
+}
 .card {
   position: absolute;
   left: 0;
@@ -70,7 +78,8 @@
   /* margin: 0 auto; */
   /* background-color: brown; */
   width: 1200px;
-  height: 580px;
+  /* height: 580px; */
+  height: max(80vh,300px);
   margin-bottom: 2%;
   /* background: #aa0ccb;  */
   /* float: left; */
