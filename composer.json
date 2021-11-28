@@ -1,0 +1,6 @@
+{
+    "name": "mtu4554/vinko",
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
