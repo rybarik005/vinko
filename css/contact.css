@@ -4,26 +4,4 @@
     border-radius: var(--radius)  var(--radius) 0 0;
 }
 
-.text2{
-    flex: 1;
-}
-.ramcek1{
-    color: white;
-    padding-left: 10%;
-}
-.ramcek2{
-    color: white;
-    padding-right: 10%;
-}
-.add{
-    padding-left: 5%;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 150%;
 
-}
-.poslat{
-    margin-top: 5px;
-    background-color: skyblue;
-    border-radius: 10px;
-}
