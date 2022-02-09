@@ -187,9 +187,6 @@ function addItemBig(index) {
               <h1 class="card-title"style="text-align:center">' + obj.wineTitle +'</h4>\
               <p class="card-text" style="text-align:center">' + obj.description +'</p>\
               <div class="">\
-                <a style="" href="#contact">\
-                  <button type="button" class="btn btn-dark" style="margin-left:25%;width:50%; height:60%;">Kúpiť - ' + obj.price+ '€</button>\
-                </a>\
             </div>\
             </div>\
           </div>\

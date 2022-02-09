@@ -1,5 +1,5 @@
 #contact{ 
-    height: 70vh;
+    height: 45vh;
     background-color: var(--primary-color);
     border-radius: var(--radius)  var(--radius) 0 0;
 }
