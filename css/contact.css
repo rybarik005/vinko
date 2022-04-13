@@ -3,5 +3,17 @@
     background-color: var(--primary-color);
     border-radius: var(--radius)  var(--radius) 0 0;
 }
-
-
+.col-6{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.col-4{
+    width: 110px;
+    display: grid;
+    align-items: center;
+}
+.col-4:hover{
+    background-color: rgba(79, 83, 164, 0.7);
+}
