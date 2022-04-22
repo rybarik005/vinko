@@ -12,7 +12,7 @@
 .col-4{
     width: 110px;
     display: grid;
-    align-items: center;
+    align-content: center;
 }
 .col-4:hover{
     background-color: rgba(79, 83, 164, 0.7);
