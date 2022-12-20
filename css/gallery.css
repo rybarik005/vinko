@@ -32,7 +32,7 @@
 }
 #gallerySection{
  
-  height: 100vh;
+  max-height: 100vh;
 }
 .square {
   max-height: max(70vh,min(50vw,600px));

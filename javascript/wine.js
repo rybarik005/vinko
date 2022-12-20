@@ -1,28 +1,3 @@
-// /* <div class="card col" style="width: 36rem;">
-// <div class="card-body p-0" style="transition: box-shadow 1000ms ease-in-out;">
-//     <div class="container">
-//         <div class="row">
-//             <div class="col-7 p-4">
-//                 <h4 class="card-title">Názov vína</h4>
-//                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-//                     qui?
-//                 </p>
-//                 <div class="row">
-//                     <h5 class="col-6">Cena:</h5>
-//                     <p class="col-6">25€</p>
-//                 </div>
-//                 <div class="row">
-//                     <div class="justify-content-center">
-//                         <a href="#contact" class="btn btn-primary">Kúpiť</a>
-//                     </div>
-//                 </div>
-//             </div>
-//             <img src="../assets/image0.jpg" alt="" class="col-5 p-0">
-//         </div>
-//     </div>
-// </div>
-// </div> */
-
 var parent= document.getElementById("MultiCarousel-inner");
 var viewportWidth = window.innerWidth;
 var itemWidth = 1000;
@@ -109,38 +84,6 @@ function resizedFinished(){
   addAnimationToCard();
 }
 
-// function addItem(index) {
-//   var padding = index == 2 ? "1" : "5";
-//   var obj = wineData[parseInt(index)];
-//   parent.insertAdjacentHTML(
-//     "afterbegin",
-//     '<div data-index="'+index +'"; data-transform="'+itemWidth * index +'" class="p-'+ padding +
-//     ' card col"style="background-color: transparent; transform: translateX(' +itemWidth * index +'px);width:1000px; min-height: 580px;">\
-//         <div class="card-body" >\
-//                 <div class="row bg-primary" style="height:580px">\
-//                     <div class="col-6 p-4 bg-warning">\
-//                         <h4 class="card-title">' + obj.wineTitle +'</h4>\
-//                         <p class="card-text">' + obj.description +'</p>\
-//                         <div class="row">\
-//                             <h5 class="col-6">Cena:</h5>\
-//                             <p class="col-6">' +obj.price +'€</p>\
-//                         </div>\
-//                         <div class="row bg-danger">\
-//                             <div class="justify-content-center">\
-//                                 <a href="#contact" class="btn btn-primary">Kúpiť</a>\
-//                             </div>\
-//                         </div>\
-//                     </div>\
-//                 </div>\
-//         </div>\
-//     </div>'
-//   );
-// }
-
-// <img src="../../vinko/assets/wines/' +
-// obj.imgTitle +
-// '" alt="" class="col-5 p-0">\
-
 function addNWines(count) {
   for (var i = 0; i < count; i++) {
     addItemBig(count - 1 - i);
@@ -153,6 +96,7 @@ function addItemBig(index) {
   var obj = wineData[parseInt(index)];
   var calcHeight = itemWidth * 0.580;
   parent.insertAdjacentHTML(
+    //  <p class="col-6 card-price">' + obj.price +'€</p>\
     "afterbegin",
     '\
     <div data-index="' +
@@ -173,9 +117,8 @@ function addItemBig(index) {
             <h1 class="card-title">' + obj.wineTitle +'</h4>\
             <p class="card-text"><b>Popis: </b>' + obj.description +'</p>\
             <div class="row">\
-              <p class="col-6 card-price">' + obj.price +'€</p>\
               <a style="flex:1" href="#contact">\
-                <button type="button" class="btn btn-dark" style="margin-top:10%;width:100%; height:60%;">Kúpiť</button>\
+                <button type="button" class="btn btn-dark" style="margin-top:10%;width:100%; height:60%;">Mám záujem</button>\
               </a>\
             </div>\
           </div>\
