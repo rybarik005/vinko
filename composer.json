@@ -1,5 +1,5 @@
 {
-    "name": "mtu4554/vinko",
+    "name": "rybarik005/vinko",
     "require": {
         "phpmailer/phpmailer": "^6.5"
     }
