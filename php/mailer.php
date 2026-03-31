@@ -21,18 +21,8 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     echo "yes";
     // //Recipients
-    // $mail->setFrom('from@example.com', 'Mailer');
-     $mail->addAddress('vinko@gmail.com', 'Joe User');     //Add a recipient
-    // $mail->addAddress('ellen@example.com');               //Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
-
-    // //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+    $mail->addAddress('vinko@gmail.com', 'Joe User');     //Add a recipient
     echo "yes";
-    //https://www.google.com/search?q=mail+host+phpmailer+google&rlz=1C1CAFA_enSK960SK960&oq=mail+host+phpmailer+google&aqs=chrome..69i57.4983j0j4&sourceid=chrome&ie=UTF-8
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
